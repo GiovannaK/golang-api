@@ -1,46 +1,39 @@
 package routes
 
-import "net/http"
+import (
+	"api/src/controllers"
+	"net/http"
+)
 
 var routesUsers = []Router{
 	{
 		URI:    "/users",
 		Method: http.MethodPost,
-		Func: func(w http.ResponseWriter, r *http.Request) {
-
-		},
+		Func: controllers.CreateUser,
 		AuthRequired: false,
 	},
 	{
 		URI:    "/users",
 		Method: http.MethodGet,
-		Func: func(w http.ResponseWriter, r *http.Request) {
-
-		},
+		Func: controllers.SearchUsers,
 		AuthRequired: false,
 	},
 	{
 		URI:    "/users/{userId}",
 		Method: http.MethodGet,
-		Func: func(w http.ResponseWriter, r *http.Request) {
-
-		},
+		Func: controllers.SearchUser,
 		AuthRequired: false,
 	},
 	{
 		URI:    "/users/{userId}",
 		Method: http.MethodPut,
-		Func: func(w http.ResponseWriter, r *http.Request) {
-
-		},
+		Func: controllers.UpdateUser,
 		AuthRequired: false,
 	},
 	{
 		URI:    "/users/{userId}",
 		Method: http.MethodDelete,
-		Func: func(w http.ResponseWriter, r *http.Request) {
-
-		},
+		Func: controllers.DeleteUser,
 		AuthRequired: false,
 	},
 }	
